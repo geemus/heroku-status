@@ -19,10 +19,10 @@ class Heroku::Command::Status < Heroku::Command::Base
 
     display('')
     if status.values.all? {|value| value == 'green'}
-      display("  All Systems Go: No known issues at this time.")
+      display("All Systems Go: No known issues at this time.")
     else
       status.each do |key, value|
-        display("  #{key}: #{value}")
+        display("#{key}: #{value}")
       end
       uri = URI.parse('https://status.heroku.com/feed')
       http = Net::HTTP.new(uri.host, uri.port)
@@ -35,8 +35,8 @@ class Heroku::Command::Status < Heroku::Command::Base
       entries = REXML::Document.new(response.body).elements.to_a("//entry")
       entry = entries.first
       display('')
-      display('  ' + entry.elements['title'].text)
-      display('  ' + entry.elements['content'].text.gsub(/\n\n/, "\n  ").gsub(/<[^>]*>/, ''))
+      display(entry.elements['title'].text)
+      display(entry.elements['content'].text.gsub(/\n\n/, "\n  ").gsub(/<[^>]*>/, ''))
     end
     display('')
 

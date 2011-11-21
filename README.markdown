@@ -11,3 +11,15 @@ Displays current status of the Heroku platform.
 To use simply call:
 
     $ heroku status
+
+If everything is currently working you should see:
+
+      All Systems Go: No known issues at this time.
+
+If something is wrong you will instead see something like this:
+
+      App Operations: yellow
+      Tools: green
+
+      Elevated Error Rates
+      ISSUE: At this time git push, dyno scaling, and unidling are having intermittent problems. We are investigating the problem and will post additional information as it becomes available.

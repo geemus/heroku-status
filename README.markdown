@@ -1,5 +1,7 @@
 # Heroku status
 
+DEPRECATED: This functionality has been merged directly into the heroku gem, see https://github.com/heroku/heroku/blob/master/lib/heroku/command/status.rb
+
 Displays current status of the Heroku platform.
 
 ## Installation
